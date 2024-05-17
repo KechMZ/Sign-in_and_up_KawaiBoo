@@ -1,0 +1,2178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <title>Account Authentication</title>
+    <style>
+      body {
+        text-align: center;
+        background-image: url(B.png);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="authForm"
+      class="container"
+      style="
+        height: 200px;
+        width: 500px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-radius: 20px;
+        background-color: rgb(255, 255, 255);
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Arial, Helvetica, sans-serif;
+      "
+    >
+      <h2>SIGN UP OR SIGN IN</h2>
+      <input type="email" placeholder="name@email.com" id="userEmail" />
+      <input type="password" placeholder="********" id="userPassword" />
+      <br /><br />
+      <button id="signUpButton">Sign Up</button>
+      <button id="signInButton">Sign In</button>
+    </div>
+
+    <div
+      id="secretContent"
+    >
+      <!--Product.html-->
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+      <body>
+        <!-- NAVBAR -->
+        <nav
+          class="navbar navbar-dark p-3"
+          aria-label="First navbar example"
+          style="background-color: #1371cee1"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#home" style="padding-left: 50px"
+              >© KawaiBoo Online Shop</a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarsExample01"
+              aria-controls="navbarsExample01"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarsExample01">
+              <ul class="navbar-nav me-auto mb-2">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="#home"
+                    style="padding-left: 30px"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    style="padding-left: 30px"
+                    href="#onsale"
+                    >On Sale</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    style="padding-left: 30px"
+                    href="#newarrival"
+                    >New Arrival</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    style="padding-left: 30px"
+                    href="#allproducts"
+                    >All Products</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    style="padding-left: 30px"
+                    href="#contacts"
+                    >Contacts</a
+                  >
+                </li>
+              </ul>
+              <form>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <br>
+
+        <button id="signOutButton">Sign Out</button>
+    
+        <!-- HEADER-->
+    
+        <div
+          class="position-relative overflow-hidden p-2 text-center"
+          style="
+            background-image: url(HB.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+          "
+        >
+          <div
+            class="col-md-8 p-lg-5 mx-auto my-5"
+            style="background-color: #fff; border-radius: 30px"
+          >
+            <h1 class="display-4 fw-normal" style="font-weight: bold">
+              Welcome to KawaiBoo!
+            </h1>
+            <p class="lead fw-normal">
+              KawaiiBoo, an online shop for adorable collectibles, from blindbox
+              figurines to charming BJD doll. We offer a wide range of kawaii items
+              to add a touch of sweetness to your collection. Shop with us for the
+              cutest finds that are sure to make you smile!
+            </p>
+            <a
+              class="btn"
+              style="background-color: #e155a1; color: #fff"
+              href="#onsale"
+              >Shop Now</a
+            >
+          </div>
+          <div class="product-device shadow-sm d-none d-md-block"></div>
+          <div
+            class="product-device product-device-2 shadow-sm d-none d-md-block"
+          ></div>
+        </div>
+    
+        <!-- CONTAINER FOR ON SALE PRODUCTS -->
+    
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <h3 class="text-center p-4" id="onsale">NOW ON SALE</h3>
+    
+        <div class="container">
+          <div class="row">
+            <!-- ALL PRODUCTS -->
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="Card1.webp"
+                  class="card-img-top"
+                  alt="Ghost Bear Dinner Series Blind Box"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Ghost Bear Dinner Series Blind Box
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 575.00 (From &#8369; 850.00)
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy Now</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModal1"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModal1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            On Sale! Ghost Bear Dinner Series
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="mc1.1.webp"
+                            class="card-img-top"
+                            alt="Modal 1"
+                          />
+                          <img
+                            src="mc1.2.webp"
+                            class="card-img-top"
+                            alt="Modal 1"
+                          />
+                          <img
+                            src="mc1.3.webp"
+                            class="card-img-top"
+                            alt="Modal 1"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="Card2.webp"
+                  class="card-img-top"
+                  alt="Cassy Cat 24-hour Convenience Store Series"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Cassy Cat 24-hour Convenience Store Series
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 600.00 (From &#8369; 850.00)
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy Now</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModal2"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModal2">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            On Sale! Cassy Cat 24-hour Convenience Store Series
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="mc2.1.webp"
+                            class="card-img-top"
+                            alt="Modal 2"
+                          />
+                          <img
+                            src="mc2.2.webp"
+                            class="card-img-top"
+                            alt="Modal 2"
+                          />
+                          <img
+                            src="mc2.3.webp"
+                            class="card-img-top"
+                            alt="Modal 2"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="Card3.webp"
+                  class="card-img-top"
+                  alt="Teennar High School Student's Club Series"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Teennar High School Student's Club Series
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 750.00 (From &#8369; 1000.00)
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy Now</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModal3"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModal3">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            On Sale! Teennar High School Student's Club Series
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="mc3.1.jpeg"
+                            class="card-img-top"
+                            alt="Modal 3"
+                          />
+                          <img
+                            src="mc3.2.webp"
+                            class="card-img-top"
+                            alt="Modal 3"
+                          />
+                          <img
+                            src="mc3.3.webp"
+                            class="card-img-top"
+                            alt="Modal 3"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img
+                  src="Card4.webp"
+                  class="card-img-top"
+                  alt="Colorful Sweetie Sprites Series Blind Box"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Colorful Sweetie Sprites Series Blind Box
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 550.00 (From &#8369; 775.00)
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy Now</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModal4"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModal4">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            On Sale! Colorful Sweetie Sprites Series Blind Box
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="mc4.1.webp"
+                            class="card-img-top"
+                            alt="Modal 4"
+                          />
+                          <img
+                            src="mc4.2.webp"
+                            class="card-img-top"
+                            alt="Modal 4"
+                          />
+                          <img
+                            src="mc4.3.webp"
+                            class="card-img-top"
+                            alt="Modal 4"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <hr />
+    
+        <!-- CAROUSEL HERE -->
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="CR1.png" class="d-block w-100" alt="Carousel 1" />
+            </div>
+            <div class="carousel-item">
+              <img src="CR2.png" class="d-block w-100" alt="Carousel 2" />
+            </div>
+            <div class="carousel-item">
+              <img src="CR3.png" class="d-block w-100" alt="Carousel 3" />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+    
+        <hr />
+    
+        <!-- CONTAINER FOR NEW ARRIVAL PRODUCTS -->
+        <h3 class="text-center p-4" id="newarrival">NEW ARRIVAL</h3>
+    
+        <div class="container">
+          <div class="row row-cols-5">
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="ACard1.jpeg"
+                  class="card-img-top"
+                  alt="Teennar Limited High School Uniform"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Teennar Limited High School Uniform
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 400.00
+                  </p>
+    
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalA1"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalA1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            New Arrival! Teennar Limited High School Uniform
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="amc1.1.jpeg"
+                            class="card-img-top"
+                            alt="Modal A1"
+                          />
+                          <img
+                            src="amc1.2.jpeg"
+                            class="card-img-top"
+                            alt="Modal A1"
+                          />
+                          <img
+                            src="amc1.3.webp"
+                            class="card-img-top"
+                            alt="Modal A1"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="ACard2.webp"
+                  class="card-img-top"
+                  alt="Square Cat Series Blind Bag"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Square Cat Series Blind Bag
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 350.00
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalA2"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalA2">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            New Arrival! Square Cat Series Blind Bag
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="amc2.1.webp"
+                            class="card-img-top"
+                            alt="Modal A2"
+                          />
+                          <img
+                            src="amc2.2.webp"
+                            class="card-img-top"
+                            alt="Modal A2"
+                          />
+                          <img
+                            src="amc2.3.webp"
+                            class="card-img-top"
+                            alt="Modal A2"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="ACard3.jpeg"
+                  class="card-img-top"
+                  alt="Panda Roll Shopping Street Series"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Panda Roll Shopping Street Series
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 625.00
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalA3"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalA3">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            New Arrival! Panda Roll Shopping Street Series
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="amc3.1.webp"
+                            class="card-img-top"
+                            alt="Modal A3"
+                          />
+                          <img
+                            src="amc3.2.webp"
+                            class="card-img-top"
+                            alt="Modal A3"
+                          />
+                          <img
+                            src="amc3.3.webp"
+                            class="card-img-top"
+                            alt="Modal A3"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="ACard4.webp"
+                  class="card-img-top"
+                  alt="Bonnie 2 Sweet Heart Party Series"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Bonnie 2 Sweet Heart Party Series
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 1150.00
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalA4"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalA4">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            New Arrival! Bonnie 2 Sweet Heart Party Series
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="amc4.1.webp"
+                            class="card-img-top"
+                            alt="Modal A4"
+                          />
+                          <img
+                            src="amc4.2.webp"
+                            class="card-img-top"
+                            alt="Modal A4"
+                          />
+                          <img
+                            src="amc4.3.webp"
+                            class="card-img-top"
+                            alt="Modal A4"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="ACard5.jpeg"
+                  class="card-img-top"
+                  alt="Teennar Campus Idol Series"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Teennar Campus Idol Series
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 850.00
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalA5"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalA5">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            New Arrival! Teennar Campus Idol Series
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="amc5.1.webp"
+                            class="card-img-top"
+                            alt="Modal A5"
+                          />
+                          <img
+                            src="amc5.2.jpeg"
+                            class="card-img-top"
+                            alt="Modal A5"
+                          />
+                          <img
+                            src="amc5.3.jpeg"
+                            class="card-img-top"
+                            alt="Modal A5"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <hr />
+    
+        <!-- 1ST CONTAINER ALL PRODUCTS -->
+        <h3 class="text-center p-4" id="allproducts">ALL PRODUCTS</h3>
+        <div class="container">
+          <div class="row row-cols-5">
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="BCard1.webp"
+                  class="card-img-top"
+                  alt="Choco Teddy Rainbow Mini Bear"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Choco Teddy Rainbow Mini Bear
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 350.00
+                  </p>
+    
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalB1"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalB1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            Choco Teddy Rainbow Mini Bear Series
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="bmc1.1.webp"
+                            class="card-img-top"
+                            alt="Modal B1"
+                          />
+                          <img
+                            src="bmc1.2.webp"
+                            class="card-img-top"
+                            alt="Modal B1"
+                          />
+                          <img
+                            src="bmc1.3.webp"
+                            class="card-img-top"
+                            alt="Modal B1"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="BCard2.webp"
+                  class="card-img-top"
+                  alt="Square Cat Series Blind Bag"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Emma Secret Forest Birthday Party
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 650.00
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalB2"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalB2">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            Emma Secret Forest Birthday Party Series
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="bmc2.1.webp"
+                            class="card-img-top"
+                            alt="Modal B2"
+                          />
+                          <img
+                            src="bmc2.2.webp"
+                            class="card-img-top"
+                            alt="Modal B2"
+                          />
+                          <img
+                            src="bmc2.3.webp"
+                            class="card-img-top"
+                            alt="Modal B2"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="BCard3.webp"
+                  class="card-img-top"
+                  alt="Molinta Spring City Wandering Series"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Molinta Spring City Wandering Series
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 700.00
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalB3"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalB3">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            Molinta Spring City Wandering Series
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="bmc3.1.webp"
+                            class="card-img-top"
+                            alt="Modal B3"
+                          />
+                          <img
+                            src="bmc3.2.webp"
+                            class="card-img-top"
+                            alt="Modal B3"
+                          />
+                          <img
+                            src="bmc3.3.webp"
+                            class="card-img-top"
+                            alt="Modal B3"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="BCard4.webp"
+                  class="card-img-top"
+                  alt="Rolife Super Creator DIY Miniature House "
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Rolife Super Creator DIY Miniature House
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 1200.00
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalB4"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalB4">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            Rolife Super Creator DIY Miniature House
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="bmc4.1.webp"
+                            class="card-img-top"
+                            alt="Modal B4"
+                          />
+                          <img
+                            src="bmc4.2.webp"
+                            class="card-img-top"
+                            alt="Modal B4"
+                          />
+                          <img
+                            src="bmc4.3.webp"
+                            class="card-img-top"
+                            alt="Modal B4"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="BCard5.webp"
+                  class="card-img-top"
+                  alt="Fruit & Vegetable Fairy Series"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Fruit & Vegetable Fairy Series
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 550.00
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalB5"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalB5">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            Fruit & Vegetable Fairy Series
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="bmc5.1.webp"
+                            class="card-img-top"
+                            alt="Modal B5"
+                          />
+                          <img
+                            src="bmc5.2.webp"
+                            class="card-img-top"
+                            alt="Modal B5"
+                          />
+                          <img
+                            src="bmc5.3.webp"
+                            class="card-img-top"
+                            alt="Modal B5"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        
+        <!-- 2ND CONTAINER ALL PRODUCTS -->
+        <div class="container">
+          <div class="row row-cols-5">
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="CCard1.jpeg"
+                  class="card-img-top"
+                  alt="PEETSOON Male Heartbeat"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    PEETSOON Male Heartbeat
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 1250.00
+                  </p>
+    
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalC1"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalC1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            PEETSOON Male Heartbeat
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="cmc1.1jpeg.jpeg"
+                            class="card-img-top"
+                            alt="Modal C1"
+                          />
+                          <img
+                            src="cmc1.2.jpeg"
+                            class="card-img-top"
+                            alt="Modal C1"
+                          />
+                          <img
+                            src="cmc1.3.jpeg"
+                            class="card-img-top"
+                            alt="Modal C1"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="CCard2.webp"
+                  class="card-img-top"
+                  alt="Mova Planet Fox Series"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Mova Planet Fox Series
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 850.00
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalC2"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalC2">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            Mova Planet Fox Series
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="cmc2.1.webp"
+                            class="card-img-top"
+                            alt="Modal C2"
+                          />
+                          <img
+                            src="cmc2.2.webp"
+                            class="card-img-top"
+                            alt="Modal C2"
+                          />
+                          <img
+                            src="cmc2.3.webp"
+                            class="card-img-top"
+                            alt="Modal C2"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="CCard3.webp"
+                  class="card-img-top"
+                  alt="Emmmkun Rolling Eyes Look Series"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Emmmkun Rolling Eyes Look Series
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 250.00
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalC3"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalC3">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            Emmmkun Rolling Eyes Look Series
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="cmc3.1.webp"
+                            class="card-img-top"
+                            alt="Modal C3"
+                          />
+                          <img
+                            src="cmc3.2.webp"
+                            class="card-img-top"
+                            alt="Modal C3"
+                          />
+                          <img
+                            src="cmc3.3.webp"
+                            class="card-img-top"
+                            alt="Modal C3"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="CCard4.webp"
+                  class="card-img-top"
+                  alt="LULU the Piggy Rainbow Sheep"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    LULU the Piggy Rainbow Sheep
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 500.00
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalC4"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalC4">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            LULU the Piggy Rainbow Sheep
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="cmc4.1.webp"
+                            class="card-img-top"
+                            alt="Modal C4"
+                          />
+                          <img
+                            src="cmc4.2.webp"
+                            class="card-img-top"
+                            alt="Modal C4"
+                          />
+                          <img
+                            src="cmc4.3.webp"
+                            class="card-img-top"
+                            alt="Modal C4"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col">
+              <div class="card" style="width: 14rem">
+                <img
+                  src="CCard5.webp"
+                  class="card-img-top"
+                  alt="Mitao Cat Love Like Peach"
+                />
+                <div class="card-body">
+                  <h5 class="card-title; text-center">
+                    Mitao Cat Love Like Peach
+                  </h5>
+                  <p class="text-center" style="color: rgb(0, 0, 0)">
+                    Only &#8369; 550.00
+                  </p>
+                  <a
+                    href="form-validation.html"
+                    class="btn btn-primary"
+                    role="button"
+                    style="background-color: #1371cee1"
+                  >
+                    Buy</a
+                  >
+    
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModalC5"
+                    style="background-color: #e155a1"
+                  >
+                    More Details
+                  </button>
+    
+                  <!-- The Modal -->
+                  <div class="modal" id="myModalC5">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title; text-center">
+                            Mitao Cat Love Like Peach
+                          </h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+    
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <img
+                            src="cmc5.1.webp"
+                            class="card-img-top"
+                            alt="Modal C5"
+                          />
+                          <img
+                            src="cmc4.2.webp"
+                            class="card-img-top"
+                            alt="Modal C5"
+                          />
+                          <img
+                            src="cmc5.3.webp"
+                            class="card-img-top"
+                            alt="Modal C5"
+                          />
+                        </div>
+    
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            style="background-color: #e155a1"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+    
+        <!-- CONTACT BEGINS HERE-->
+        <h3 id="contacts" class="text-center" style="padding-top: 20px">
+          CONTACTS
+        </h3>
+        <div
+          class="container text-center"
+          style="
+            background-color: #ffffff;
+            border-collapse: separate;
+            border-radius: 25px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+          "
+        >
+          <div class="row">
+            <div class="col">
+              <form
+                style="
+                  border-collapse: separate;
+                  border-radius: 25px;
+                  padding-top: 20px;
+                  padding-bottom: 20px;
+                  padding-left: 20px;
+                  padding-right: 20px;
+                "
+              >
+                <div
+                  class="mb-3 container-fluid; text-align:left"
+                  style="text-align: left"
+                >
+                  <h4 style="color: #fff;">Login</h4>
+                  <label for="exampleInputEmail1" class="form-label">
+                    Email Adress</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                  />
+                  <div id="emailHelp" class="form-text" style="color: #000000">
+                    We'll never share your email with anyone else
+                  </div>
+                </div>
+    
+                <div class="mb-3" style="text-align: left">
+                  <label for="exampleInputPassword1" class="form-label"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                  />
+                </div>
+                <div class="mb-3 form-check" style="text-align: left">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="exampleCheck1"
+                  />
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Click Here</label
+                  >
+                </div>
+                <button
+                  type="submit"
+                  class="btn"
+                  style="background-color: #e155a1; color: #ffffff"
+                  ;
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+            <div class="col">
+              <div class="mapouter">
+                <div class="gmap_canvas">
+                  <iframe width="920" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Tokyo,%20Japan%20+(KawaiBoo%20Shop)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='https://www.pferdeversicherung.at/pferdelebensversicherung/'>KawaiBoo.com</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=758d193bfef0a0ff623227249b983fff0bf49245'></script>></iframe>
+                  <a href="https://www.easybooking.eu/">KawaiBooOnlineWebsite.com</a>
+                  <script
+                    type="text/javascript"
+                    src="https://embedmaps.com/google-maps-authorization/script.js?id=25e1882c38b68d86cd76c7fa332715a89eedb895"
+                  ></script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <!-- CONTACT ENDS HERE-->
+    
+        <!-- FOOTER BEGINS HERE -->
+        <footer class="text-center" style="background-color: #5caeffe1">
+          <!-- Grid container -->
+          <div class="container pt-3">
+            <!-- Section: Social media -->
+            <section class="mb-2">
+              <!-- Facebook -->
+              <a
+                data-mdb-ripple-init
+                class="btn btn-link btn-floating btn-lg text-body m-1"
+                href="https://www.facebook.com/login/"
+                role="button"
+                data-mdb-ripple-color="dark"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+    
+              <!-- Twitter -->
+              <a
+                data-mdb-ripple-init
+                class="btn btn-link btn-floating btn-lg text-body m-1"
+                href="https://twitter.com/i/flow/login"
+                role="button"
+                data-mdb-ripple-color="dark"
+                ><i class="fab fa-twitter"></i
+              ></a>
+    
+              <!-- Google -->
+              <a
+                data-mdb-ripple-init
+                class="btn btn-link btn-floating btn-lg text-body m-1"
+                href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&osid=1&passive=1209600&service=mail&ifkv=ARZ0qKKyL--8R_xrkvBXI_aNiDswT4jsQ7xC0lBWGwfIx5fceKeBYhMKD5FHlQ2YkZALRWSoqgXqBw&theme=mn&ddm=0&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+                role="button"
+                data-mdb-ripple-color="dark"
+                ><i class="fab fa-google"></i
+              ></a>
+    
+              <!-- Instagram -->
+              <a
+                data-mdb-ripple-init
+                class="btn btn-link btn-floating btn-lg text-body m-1"
+                href="https://www.instagram.com/"
+                role="button"
+                data-mdb-ripple-color="dark"
+                ><i class="fab fa-instagram"></i
+              ></a>
+    
+              <!-- Linkedin -->
+              <a
+                data-mdb-ripple-init
+                class="btn btn-link btn-floating btn-lg text-body m-1"
+                href="https://www.linkedin.com/login"
+                role="button"
+                data-mdb-ripple-color="dark"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <!-- Github -->
+              <a
+                data-mdb-ripple-init
+                class="btn btn-link btn-floating btn-lg text-body m-1"
+                href="https://github.com/login"
+                role="button"
+                data-mdb-ripple-color="dark"
+                ><i class="fab fa-github"></i
+              ></a>
+            </section>
+            <!-- Section: Social media -->
+          </div>
+          <!-- Grid container -->
+    
+          <!-- Copyright -->
+    
+          <div
+            class="text-center p-3; text-black"
+            style="
+              background-color: #5caeffe1;
+              padding-top: 10px;
+              padding-bottom: 10px;
+            "
+          >
+            © 2024 Copyright:
+            <a
+              class="text-body"
+              href="https://mdbootstrap.com/"
+              style="color: rgb(255, 255, 255)"
+              >KawaiBoo.com</a
+            >
+          </div>
+          <!-- Copyright -->
+        </footer>
+        <!-- FOOTER ENDS HERE -->
+      </body>
+      <!--End of Product.html-->
+    </div>
+
+    <script type="module">
+      //Update the below URL with the appropriate version if necessary.
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut,
+        //Update the below URL with the appropriate version if necessary.
+      } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+      // INSERT YOUR FIREBASE CONFIG OBJECT HERE
+      const firebaseConfig = {
+        apiKey: "AIzaSyATcPXtqmpHuN6s-lDfpzC1EWuIe9tJZdE",
+        authDomain: "authentication01-8249a.firebaseapp.com",
+        projectId: "authentication01-8249a",
+        storageBucket: "authentication01-8249a.appspot.com",
+        messagingSenderId: "975358085731",
+        appId: "1:975358085731:web:4aae79eb8219dff8cac656",
+      };
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      const userEmail = document.querySelector("#userEmail");
+      const userPassword = document.querySelector("#userPassword");
+      const authForm = document.querySelector("#authForm");
+      const secretContent = document.querySelector("#secretContent");
+      const signUpButton = document.querySelector("#signUpButton");
+      const signInButton = document.querySelector("#signInButton");
+      const signOutButton = document.querySelector("#signOutButton");
+
+      secretContent.style.display = "none";
+
+      const userSignUp = async () => {
+        const signUpEmail = userEmail.value;
+        const signUpPassword = userPassword.value;
+        createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+            Swal.fire("Your Account is succesfully created!");
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode + errorMessage);
+          });
+      };
+
+      const userSignIn = async () => {
+        const signInEmail = userEmail.value;
+        const signInPassword = userPassword.value;
+        signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            Swal.fire("You have signed in successfully!");
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode + errorMessage);
+          });
+      };
+
+      const checkAuthState = async () => {
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            authForm.style.display = "none";
+            secretContent.style.display = "block";
+          } else {
+            authForm.style.display = "block";
+            secretContent.style.display = "none";
+          }
+        });
+      };
+
+      const userSignOut = async () => {
+        await signOut(auth);
+        Swal.fire("User Logout");
+      };
+
+      checkAuthState();
+
+      signUpButton.addEventListener("click", userSignUp);
+      signInButton.addEventListener("click", userSignIn);
+      signOutButton.addEventListener("click", userSignOut);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
